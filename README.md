@@ -1,35 +1,10 @@
-# foreachLabs_test_task
+## Testna naloga Foreach Labs. 
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+### Navodilo: 
+          Kopiraj repozitorij in ustvari svojega.
+          Ustvari projekt v VueJS v katerem implementiraj design iz povezave: https://www.figma.com/file/HGrLXvQYxyrjGkxNbQzf8g/Untitled?node-id=0%3A1
+          Obrazec naj ustvari POST zahtevek na: https://my-json-server.typicode.com/ForeachLabs/test-task/users.
+          Link vrne ID novo ustvarjenega uporabnika, katerega dodaj na seznam uporabnikov. Ta naj prikaže tudi obstoječe uporabnike.
+          Informacije za API: https://my-json-server.typicode.com/ForeachLabs/test-task
+          
+          
