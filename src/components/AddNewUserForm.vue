@@ -1,29 +1,65 @@
 <script>
+import axios from 'axios';
+const baseURL = 'http://localhost:3000/users'; // 'https://my-json-server.typicode.com/ForeachLabs/test-task/users';
   export default {
     data() {
       return {
-          name: '',
-          surname: '',
-          username: '',
-          password: ''   
+        userData: [],
+        newUserData: {name: '',
+                      surname: '',
+                      username: '',
+                      password: '' 
+                      } 
+      };
+    },
+    async created() {
+        try {
+          const response = await axios.get(baseURL);
+          this.userData = response.data;
+          console.log(response);
+        } catch(e) {
+          console.error(e);
+        }
+      },
+    methods: {
+      async postData(){
+          // console.warn(this.userData)
+          const response = await axios.post(baseURL, this.newUserData);
+              console.log(response);
+              this.userData = [...this.userData, response.data];
+              this.newUserData = null;
       }
     }
   }
 </script>
 <script setup>
- 
+
 </script>
 
 <template>
   <div class="userForm-wrapper">
     <h2>Nov uporabnik</h2>
-    <form>
-      <input type="text" placeholder="Ime" required v-model="name">
-      <input type="text" placeholder="Priimek" required v-model="surname">
-      <input type="text" placeholder="Uporabniško ime" required v-model="username">
-      <input type="password" placeholder="Geslo" required v-model="password">
-      <button type="button">Dodaj uporabnika</button>
+    <form @submit="postData" method="post">
+      <input type="text" placeholder="Ime" required v-model="newUserData.name">
+      <input type="text" placeholder="Priimek" required v-model="newUserData.surname">
+      <input type="text" placeholder="Uporabniško ime" required v-model="newUserData.username">
+      <input type="password" placeholder="Geslo" required v-model="newUserData.password">
+      <button type="submit">Dodaj uporabnika</button>  
+      <table>
+        <tr>
+            <th>Ime</th>
+            <th>Priimek</th>
+            <th>Uporabniško ime</th>
+        </tr>
+        <tr v-for="user of userData" :key="user.id">
+            <td>{{user.name}}</td>
+            <td>{{user.surname}}</td>
+            <td>{{user.username}}</td>
+            <td>{{newUserData.name}}</td>
+        </tr>
+        </table>
     </form>
+
   </div>
 </template>
 

@@ -7,9 +7,8 @@
     <div class="intermatic-logo">
       <img src="@/assets/image4.png" />
     </div>
-    <ul class="list-wrapper">
-        <li class="title">
-          <img src="@/assets/pie-chart-logo.png" />
+    <ul>
+        <li>
           <div>Uporabniki</div>
         </li>
     </ul>
@@ -19,9 +18,7 @@
 <style scoped>
   .wrapper {
     width: var(--sidebar-width); 
-    height: 100vh;
-    left: 0px;
-    top: 0px;
+    min-height: 100vh;
     background: #1A303D;
   }
   .intermatic-logo {
@@ -29,39 +26,22 @@
     left: 32px;
     top: 37px;
   }
-  .intermatic-logo img {
-    width: 180px;
-    height: 32px;
-    left: 2px;
-    top: 3px;
-  }
-  .list-wrapper{
+  ul{
     height: 20px;
     left: 20px;
     right: 20px;
     top: calc(12% - 20px/2);
+    /* list-style: url('@/assets/pie-chart-logo.png'); */
   }
-  .title {
-    display: inline-flex;
+  li{
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.2px;
+    padding: 1rem 2rem;
     color: #A4A6B3;
+    list-style: url('@/assets/pie-chart-16.png');
   }
-   .title div {
-    left: 2rem;
-    right: 0;
-    height: 1rem;
-    width: 1rem;
-
-   }
-   .title img {
-    left: 0%;
-    right: 0%;
-    height: 1rem;
-    width: 1rem;
-   }
 </style>

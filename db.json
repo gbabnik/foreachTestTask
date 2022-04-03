@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "janez",
+      "surname": "novak",
+      "username": "janez.novak",
+      "password": "173e64cc3014db261919fe2dfa243400"
+    },
+    {
+      "id": 2,
+      "name": "miha",
+      "surname": "novak",
+      "username": "miha.novak",
+      "password": "e9b9281d23ed82908bfc689176e846c0"
+    },
+    {
+      "name": "xfv",
+      "surname": "ydv",
+      "username": "vadv",
+      "password": "dvad",
+      "id": 3
+    }
+  ]
+}

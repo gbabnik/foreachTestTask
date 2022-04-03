@@ -4,27 +4,58 @@
 </script>
 
 <template>
-  <div class="main-wrapper">
+<div class="main-wrapper">
+  <header>
       <h1> Uporabniki </h1>
       <div class="userName-wrapper">
-        <p>Gašper Babnik</p> 
+        <p class="name-name">Gašper Babnik</p>
+        <div class="name-logo">GB</div> 
       </div>
-      <AddNewUserForm />
-      <ListOfUsers />
+  </header>
+  <AddNewUserForm />
+  <ListOfUsers />
   </div>
 </template>
 <style scoped>
 
+header {
+ display: inline;
+ vertical-align: middle;
+}
+
 .main-wrapper{
-  position: relative;
-  float: left;
   padding: 1rem;
   width: calc(100vw - var(--sidebar-width));
   background: #F7F8FC;
 }
 
 .userName-wrapper {
-  display: inline-flex;
+  display: inline;
   float: right;
+  line-height: 40px;
+
+}
+.name-name {
+  float: left;
+  text-align: center;
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 600;
+  vertical-align: middle;
+  margin: 5px;
+  color: #252733;
+}
+.name-logo {
+  float: right;
+  width: 42px;
+  height: 42px;
+  margin: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #9FA2B4;
+  border: 1.5px solid #DFE0EB;
+  border-radius: 100%;
+  text-align: center;
+  vertical-align: middle; 
 }
 </style>
