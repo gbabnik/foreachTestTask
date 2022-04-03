@@ -1,11 +1,12 @@
 <script>
 import axios from 'axios';
-const baseURL = 'http://localhost:3000/users'; // 'https://my-json-server.typicode.com/ForeachLabs/test-task/users';
+const baseURL = 'https://my-json-server.typicode.com/ForeachLabs/test-task/users'; // 'http://localhost:3000/users'; //
   export default {
     data() {
       return {
         userData: [],
-        newUserData: {name: '',
+        newUserData: {
+                      name: '',
                       surname: '',
                       username: '',
                       password: '' 
@@ -26,8 +27,8 @@ const baseURL = 'http://localhost:3000/users'; // 'https://my-json-server.typico
           // console.warn(this.userData)
           const response = await axios.post(baseURL, this.newUserData);
               console.log(response);
-              this.userData = [...this.userData, response.data];
-              this.newUserData = null;
+              // this.userData = [...this.userData, response.data];
+              // this.newUserData = null;
       }
     }
   }
