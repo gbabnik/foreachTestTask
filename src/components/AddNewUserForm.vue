@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-const baseURL = 'https://my-json-server.typicode.com/ForeachLabs/test-task/users'; // 'http://localhost:3000/users'; //
+const baseURL = 'https://my-json-server.typicode.com/ForeachLabs/test-task/users'; //'http://localhost:3000/users'; //
   export default {
     data() {
       return {
@@ -21,17 +21,20 @@ const baseURL = 'https://my-json-server.typicode.com/ForeachLabs/test-task/users
         } catch(e) {
           console.error(e);
         }
-      },
+    },
     methods: {
-      async postData(){
-          // console.warn(this.userData)
-          const response = await axios.post(baseURL, this.newUserData);
-              console.log(response);
-              // this.userData = [...this.userData, response.data];
-              // this.newUserData = null;
+      async postUser(){
+        await axios.post(baseURL, this.newUserData)
+          .then((response)=>{
+            console.log(response.data.id);
+            this.userData = [...this.userData, response.data];
+            this.newUserData = '';
+          }).catch(error => {
+            console.log(error);
+          })
       }
     }
-  }
+  };
 </script>
 <script setup>
 
@@ -40,7 +43,7 @@ const baseURL = 'https://my-json-server.typicode.com/ForeachLabs/test-task/users
 <template>
   <div class="userForm-wrapper">
     <h2>Nov uporabnik</h2>
-    <form @submit="postData" method="post">
+    <form @submit.prevent="postUser" method="post">
       <input type="text" placeholder="Ime" required v-model="newUserData.name">
       <input type="text" placeholder="Priimek" required v-model="newUserData.surname">
       <input type="text" placeholder="Uporabniško ime" required v-model="newUserData.username">
@@ -81,9 +84,6 @@ const baseURL = 'https://my-json-server.typicode.com/ForeachLabs/test-task/users
   margin: 0;
 
 }
-
-
-
 
 /* @media (min-width: 1024px) {
   .item {
